@@ -1,0 +1,18 @@
+body {
+
+}
+#guess_input {
+    text-align:center;
+    font-size: 8vmax;
+    align-items: center;
+}
+
+@font-face {
+    font-family: Grotesk-Regular;
+    src: url(images/HKGrotesk-Regular.otf);
+}
+
+#buttonid, #response_div, #reset  {
+    font-size: 5vmax;
+}
+
