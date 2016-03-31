@@ -66,17 +66,17 @@ guessView.prototype = {
 
         if (guess < model.randomNumber) {
             console.log("Too Low Bro");
-            ($("#response_div").html("Too Low Bro!").fadeToggle(3000));
+            ($("#response_div").html("Too Low Bro!").fadeToggle(300).fadeIn(2000));
             return false;
         }
         else if (guess > model.randomNumber) {
             console.log("Too High Sly");
-            ($("#response_div").html("Too High!").fadeToggle(3000));
+            ($("#response_div").html("Too High!").fadeToggle(300).fadeIn(2000));
             return false;
         }
         else {
             console.log("Congratulations, " + guess + " is correct!");
-            ($("#response_div").html("You guessed it!").fadeToggle(3000));
+            ($("#response_div").html("You guessed it!").fadeToggle(300).fadeIn(2000));
             this.reset();
             return true;
         }
