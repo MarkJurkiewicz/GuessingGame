@@ -1,18 +1,17 @@
 body {
-
+    background: url("images/feeling-lucky.png")no-repeat center right fixed;
+    font-family: 'American Typewriter';
 }
+
 #guess_input {
     text-align:center;
-    font-size: 8vmax;
+    font-size: 3.7vmax;
     align-items: center;
-}
-
-@font-face {
-    font-family: Grotesk-Regular;
-    src: url(images/HKGrotesk-Regular.otf);
+    font-family: 'American Typewriter';
 }
 
 #buttonid, #response_div, #reset  {
     font-size: 5vmax;
+    font-family: 'American Typewriter';
 }
 

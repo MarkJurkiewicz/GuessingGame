@@ -76,9 +76,9 @@ guessView.prototype = {
         }
         else {
             console.log("Congratulations, " + guess + " is correct!");
-            ($("#response_div").html("You guessed it!").fadeToggle(3200).fadeOut(3500));
+            ($("#response_div").html("You guessed it!").fadeToggle(300).fadeOut(3500));
             this.reset();
-            ($("#reset").html("The Number has been Reset! Guess Again!").fadeIn(3000).fadeOut(8000));
+            ($("#reset").html("Number Reset! Guess Again!").fadeIn(3000).fadeOut(8000));
             return true;
         }
     },
