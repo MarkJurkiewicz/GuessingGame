@@ -1,4 +1,5 @@
 body {
+    font-size: 5vmax;
     background: url("images/feeling-lucky.png")no-repeat center right fixed;
     font-family: 'American Typewriter';
 }
