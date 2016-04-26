@@ -2,6 +2,7 @@ body {
     font-size: 5vmax;
     background: url("images/feeling-lucky.png")no-repeat center right fixed;
     font-family: 'American Typewriter';
+    overflow: hidden;
 }
 
 #guess_input {
@@ -16,3 +17,32 @@ body {
     font-family: 'American Typewriter';
 }
 
+#point-gun {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 8%;
+    top: 0;
+    -webkit-transform: rotateX(50deg);
+    -moz-transform: rotateX(50deg);
+    -ms-transform: rotateX(50deg);
+    -o-transform: rotateX(50deg);
+    transform: rotateX(50deg);
+    transform-origin: 50% 100%;
+}
+
+#point-gun img {
+    width: 25%;
+    height: 100%;
+    position: absolute;
+    top: -6%;
+}
+
+#magnum {
+    height: 30%;
+    width: 33%;
+    -webkit-perspective: 900px;
+    position: absolute;
+    top: 80%;
+    left: 31%;
+}
