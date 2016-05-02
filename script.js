@@ -24,6 +24,7 @@ guessModel.prototype = {
      */
     init: function (min, max) {
 
+        this.createTargets(x);
         this.generateNumber();
         console.log(this.minNumber, this.maxNumber);
     },
@@ -34,9 +35,13 @@ guessModel.prototype = {
     generateNumber: function () {
         this.randomNumber = Math.floor(this.minNumber + (Math.random() * this.maxNumber));
         console.log("Number Generated:" + this.randomNumber);
+    },
+
+    createTargets: function (num) {
+        for (var i = 0; i < num; i++)
+            $('#targets').append('<div class="box col-xs-1 col-md-1" id="box' + i + '"></div>');
     }
 };
-
 
 
 
@@ -57,12 +62,12 @@ guessView.prototype = {
      * @param guess
      * @returns {boolean}
      */
-    button_element:null,
-    guess: function(guess) {
+    button_element: null,
+    guess: function (guess) {
         model.totalGuesses++;
         console.log(guess);
         console.log(model.randomNumber);
-        console.log("Total Guesses = "+ model.totalGuesses);
+        console.log("Total Guesses = " + model.totalGuesses);
 
         if (guess < model.randomNumber) {
             console.log("Too Low Bro");
@@ -87,12 +92,12 @@ guessView.prototype = {
      * @params none
      * @returns {boolean}
      */
-    numberCheck: function() {
+    numberCheck: function () {
         var str = $('#guess_input').val();
         if (str && !isNaN(str)) {
             var int = parseInt(str, 10);
             this.guess(int);
-        }else{
+        } else {
             console.log("Not a Number, Guess Again");
             ($("#response_div").html("Numbers only!").fadeOut(3000));
             return false;
@@ -101,18 +106,20 @@ guessView.prototype = {
     /**
      * reset - resets guesses and the random number and calls on generateNumber to insert a new random number
      */
-    reset: function(){
+    reset: function () {
         model.generateNumber();
         model.totalGuesses = 0;
         console.log("the total number of Guesses:" + model.totalGuesses);
         console.log("reset the RandomNumber to:" + model.randomNumber);
     },
-    initialize: function (){
+    initialize: function () {
         this.button_element = $("#buttonid");
         this.button_element.click(function () {
             view.numberCheck();
+            $('#guess_input').val('');
+
         });
-        $('#guess_input').keypress(function(e) {  // upon pressing the ENTER key the submit button is triggered
+        $('#guess_input').keypress(function (e) {  // upon pressing the ENTER key the submit button is triggered
             if (e.which == 13) {
                 $('#buttonid').click();
                 $('#guess_input').val('');
@@ -121,9 +128,11 @@ guessView.prototype = {
     }
 };
 
+
+//global variables
 var model;
 var view;
-
+var x = 10;  //set number of targets to 10;
 
 $(function () {  //doc ready
     model = new guessModel();
