@@ -60,7 +60,15 @@ html {
 }
 
 .box {
-    height: 50px;
+    height: 100px;
     width: 50px;
     border: 1px solid black;
+    background: url(images/target.jpg)no-repeat center;
+}
+
+#targets {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }

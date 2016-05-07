@@ -24,7 +24,7 @@ guessModel.prototype = {
      */
     init: function (min, max) {
 
-        this.createTargets(x);
+
         this.generateNumber();
         console.log(this.minNumber, this.maxNumber);
     },
@@ -35,11 +35,6 @@ guessModel.prototype = {
     generateNumber: function () {
         this.randomNumber = Math.floor(this.minNumber + (Math.random() * this.maxNumber));
         console.log("Number Generated:" + this.randomNumber);
-    },
-
-    createTargets: function (num) {
-        for (var i = 0; i < num; i++)
-            $('#targets').append('<div class="box col-xs-1 col-md-1" id="box' + i + '"></div>');
     }
 };
 
@@ -49,7 +44,7 @@ guessModel.prototype = {
 /**
  * The View. View presents the model and provides
  * the UI events. The controller is attached to these
- * events to handle the user interraction.
+ * events to handle the user interaction.
  */
 
 var guessView = function () {
@@ -113,6 +108,7 @@ guessView.prototype = {
         console.log("reset the RandomNumber to:" + model.randomNumber);
     },
     initialize: function () {
+        this.createTargets(x);
         this.button_element = $("#buttonid");
         this.button_element.click(function () {
             view.numberCheck();
@@ -125,7 +121,19 @@ guessView.prototype = {
                 $('#guess_input').val('');
             }
         });
-    }
+    },
+    /**
+     * createTargets - dynamically creates the shooting range targets
+     * @param num
+     */
+    createTargets: function (num) {
+        for (var i = 0; i < num; i++) {
+            $('#targets').append('<div class="box col-xs-1 col-md-1" id="box' + i + '"></div>').click(function () {
+                $('#guess_input').val();
+            });
+            }
+        }
+
 };
 
 
