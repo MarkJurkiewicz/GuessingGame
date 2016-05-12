@@ -109,6 +109,7 @@ guessView.prototype = {
     },
     initialize: function () {
         this.createTargets(x);
+        this.shootTarg();
         this.button_element = $("#buttonid");
         this.button_element.click(function () {
             view.numberCheck();
@@ -128,12 +129,48 @@ guessView.prototype = {
      */
     createTargets: function (num) {
         for (var i = 0; i < num; i++) {
-            $('#targets').append('<div class="box col-xs-1 col-md-1" id="box' + i + '"></div>').click(function () {
-                $('#guess_input').val();
-            });
-            }
+            $('#targets').append('<div class="box col-xs-1 col-md-1" id="box' + i + '"></div>');
         }
+    },
+    /**
+     * shootTarg - user clicks a target and a number input for the guess is registered
+     * @param none
+     */
+    shootTarg: function () {
+        $('#box0').click(function () {
+            $('#guess_input').val(1);
+        });
+        $('#box1').click(function (){
+            $('#guess_input').val(2);
+        });
+        $('#box2').click(function () {
+            $('#guess_input').val(3);
+        });
+        $('#box3').click(function (){
+            $('#guess_input').val(4);
+        });
+        $('#box4').click(function () {
+            $('#guess_input').val(5);
+        });
+        $('#box5').click(function (){
+            $('#guess_input').val(6);
+        });
+        $('#box6').click(function () {
+            $('#guess_input').val(7);
+        });
+        $('#box7').click(function (){
+            $('#guess_input').val(8);
+        });
+        $('#box8').click(function () {
+            $('#guess_input').val(9);
+        });
+        $('#box9').click(function (){
+            $('#guess_input').val(10);
+        });
 
+
+
+    }
 };
 
 
