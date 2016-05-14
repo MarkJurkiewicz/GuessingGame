@@ -139,36 +139,45 @@ guessView.prototype = {
     shootTarg: function () {
         $('#box0').click(function () {
             $('#guess_input').val(1);
+            $('#buttonid').click();
         });
+
         $('#box1').click(function (){
             $('#guess_input').val(2);
+            $('#buttonid').click();
         });
         $('#box2').click(function () {
             $('#guess_input').val(3);
+            $('#buttonid').click();
         });
         $('#box3').click(function (){
             $('#guess_input').val(4);
+            $('#buttonid').click();
         });
         $('#box4').click(function () {
             $('#guess_input').val(5);
+            $('#buttonid').click();
         });
         $('#box5').click(function (){
             $('#guess_input').val(6);
+            $('#buttonid').click();
         });
         $('#box6').click(function () {
             $('#guess_input').val(7);
+            $('#buttonid').click();
         });
         $('#box7').click(function (){
             $('#guess_input').val(8);
+            $('#buttonid').click();
         });
         $('#box8').click(function () {
             $('#guess_input').val(9);
+            $('#buttonid').click();
         });
         $('#box9').click(function (){
             $('#guess_input').val(10);
+            $('#buttonid').click();
         });
-
-
 
     }
 };
