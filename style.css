@@ -62,7 +62,7 @@ html {
 .box {
     height: 100px;
     width: 50px;
-    border: 1px solid black;
+    border: none;
     background: url(images/target.jpg)no-repeat center;
 }
 

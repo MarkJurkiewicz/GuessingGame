@@ -107,13 +107,17 @@ guessView.prototype = {
         console.log("the total number of Guesses:" + model.totalGuesses);
         console.log("reset the RandomNumber to:" + model.randomNumber);
     },
+    /**
+     * initialize - calls functions essential for the game
+     *  @param none
+     */
     initialize: function () {
         this.createTargets(x);
         this.shootTarg();
         this.button_element = $("#buttonid");
         this.button_element.click(function () {
             view.numberCheck();
-            $('#guess_input').val('');
+            //$('#guess_input').val('');
 
         });
         $('#guess_input').keypress(function (e) {  // upon pressing the ENTER key the submit button is triggered
