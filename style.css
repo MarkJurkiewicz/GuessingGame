@@ -10,16 +10,20 @@ html {
 
 #gameArea {
     text-align:center;
-    font-size: 3.7vmax;
+    font-size: 1.7vmax;
     align-items: center;
     font-family: 'American Typewriter';
     margin: 0 auto;
 }
+#buttonid{
+    border:none;
+}
 #guess_input {
     text-align:center;
-    font-size: 3.7vmax;
+    font-size: 4vmax;
     align-items: center;
     font-family: 'American Typewriter';
+    border:none;
 }
 
 #buttonid, #response_div, #reset  {
@@ -60,10 +64,12 @@ html {
 }
 
 .box {
-    height: 100px;
+    height: 200px;
     width: 50px;
     border: none;
     background: url(images/target.jpg)no-repeat center;
+    background-size: 95px;
+    margin: 8px;
 }
 
 #targets {

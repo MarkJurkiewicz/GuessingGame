@@ -4,7 +4,6 @@
  */
 var guessModel = function (min, max) {
     this.init(min, max);
-    //this.generateNumber();
 };
 
 guessModel.prototype = {
@@ -24,7 +23,7 @@ guessModel.prototype = {
      */
     init: function (min, max) {
 
-
+        this.loadSound();
         this.generateNumber();
         console.log(this.minNumber, this.maxNumber);
     },
@@ -35,6 +34,10 @@ guessModel.prototype = {
     generateNumber: function () {
         this.randomNumber = Math.floor(this.minNumber + (Math.random() * this.maxNumber));
         console.log("Number Generated:" + this.randomNumber);
+    },
+
+    loadSound: function (shoot) {
+        this.sound = new Audio('44magnum.mp3');
     }
 };
 
@@ -196,4 +199,8 @@ var x = 10;  //set number of targets to 10;
 $(function () {  //doc ready
     model = new guessModel();
     view = new guessView();
+    $('#targets').click(function () {
+        model.sound.play();
+        model.sound.currentTime=0;
+    })
 });
