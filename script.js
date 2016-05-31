@@ -75,9 +75,10 @@ guessView.prototype = {
             return false;
         }
         else {
+            $('#guess_input').val('');
             console.log("Congratulations, " + guess + " is correct!");
             ($("#response_div").html("You guessed it!").fadeToggle(3000).fadeOut(3500));
-            this.reset();
+                this.reset();
             ($("#reset").html("Number Reset! Guess Again!").fadeIn(3000).fadeOut(8000));
             return true;
         }
