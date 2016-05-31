@@ -36,7 +36,7 @@ guessModel.prototype = {
         console.log("Number Generated:" + this.randomNumber);
     },
 
-    loadSound: function (shoot) {
+    loadSound: function () {
         this.sound = new Audio('44magnum.mp3');
     }
 };
@@ -50,17 +50,20 @@ guessModel.prototype = {
  * events to handle the user interaction.
  */
 
-var guessView = function () {
-    this.initialize();
+var guessView = function (targ) {
+    this.initialize(targ);
 };
 
 guessView.prototype = {
+    button_element: null,
+
+    targets: 10,
     /**
      * guess - conditionals to check for correct or incorrect number
      * @param guess
      * @returns {boolean}
      */
-    button_element: null,
+
     guess: function (guess) {
         model.totalGuesses++;
         console.log(guess);
@@ -115,8 +118,8 @@ guessView.prototype = {
      * initialize - calls functions essential for the game
      *  @param none
      */
-    initialize: function () {
-        this.createTargets(x);
+    initialize: function (targ) {
+        this.createTargets(this.targets);
         this.shootTarg();
         this.button_element = $("#buttonid");
         this.button_element.click(function () {
@@ -135,9 +138,11 @@ guessView.prototype = {
      * createTargets - dynamically creates the shooting range targets
      * @param num
      */
-    createTargets: function (num) {
-        for (var i = 0; i < num; i++) {
-            $('#targets').append('<div class="box col-xs-1 col-md-1" id="box' + i + '"></div>');
+    createTargets: function (targ) {
+        var arr = [];
+        for (var i = 0; i < targ; i++) {
+            arr.push(targ);
+            $('#targets').append('<div class="box col-xs-1 col-md-1" id="box' + i + '">' + arr.length + '</div>');
         }
     },
     /**
@@ -194,7 +199,7 @@ guessView.prototype = {
 //global variables
 var model;
 var view;
-var x = 10;  //set number of targets to 10;
+//var x = 10;  //set number of targets to 10;
 
 $(function () {  //doc ready
     model = new guessModel();
