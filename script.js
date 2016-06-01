@@ -38,6 +38,8 @@ guessModel.prototype = {
 
     loadSound: function () {
         this.sound = new Audio('44magnum.mp3');
+        this.quoteSound = new Audio('day.wav');
+        this.winSound = new Audio('luck.mov');
     }
 };
 
@@ -81,6 +83,7 @@ guessView.prototype = {
             return false;
         }
         else {
+            model.winSound.play();
             $('#guess_input').val('');
             console.log("Congratulations, " + guess + " is correct!");
             ($("#response_div").html("You guessed it!").fadeToggle(3000).fadeOut(3500));
@@ -208,4 +211,6 @@ $(function () {  //doc ready
         model.sound.play();
         model.sound.currentTime=0;
     })
+    model.quoteSound.play();
+
 });
