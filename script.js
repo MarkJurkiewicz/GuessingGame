@@ -39,7 +39,7 @@ guessModel.prototype = {
     loadSound: function () {
         this.sound = new Audio('44magnum.mp3');
         this.quoteSound = new Audio('day.wav');
-        this.winSound = new Audio('luck.mov');
+        this.winSound = new Audio('gameover.wav');
     }
 };
 
