@@ -40,8 +40,8 @@ guessModel.prototype = {
         this.sound = new Audio('44magnum.mp3');
         this.quoteSound = new Audio('day.wav');
         this.winSound = new Audio('hail.wav');
-        this.lowSound = new Audio('damn_it.wav');
-        this.highSound = new Audio('come_on.wav');
+        //this.lowSound = new Audio('damn_it.wav');
+        //this.highSound = new Audio('come_on.wav');
     }
 };
 
@@ -75,13 +75,13 @@ guessView.prototype = {
         console.log("Total Guesses = " + model.totalGuesses);
 
         if (guess < model.randomNumber) {
-            model.lowSound.play();
+            //model.lowSound.play();
             console.log("Too Low Bro");
             ($("#response_div").html("Too Low Bro!").fadeToggle(300).fadeIn(2000));
             return false;
         }
         else if (guess > model.randomNumber) {
-            model.highSound.play();
+            //model.highSound.play();
             console.log("Too High Sly");
             ($("#response_div").html("Too High!").fadeToggle(300).fadeIn(2000));
             return false;
