@@ -41,7 +41,7 @@ guessModel.prototype = {
         this.quoteSound = new Audio('day.wav');
         this.winSound = new Audio('hail.wav');
         this.lowSound = new Audio('ricochet.wav');
-        this.highSound = new Audio('come_on.wav' , 'ricochet2.wav');
+        this.highSound = new Audio('ricochet2.wav');
     }
 };
 
