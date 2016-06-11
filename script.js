@@ -35,7 +35,10 @@ guessModel.prototype = {
         this.randomNumber = Math.floor(this.minNumber + (Math.random() * this.maxNumber));
         console.log("Number Generated:" + this.randomNumber);
     },
-
+    /**
+     * loadSound - initializes the sounds used in the game
+     * @params none
+     */
     loadSound: function () {
         this.sound = new Audio('44magnum.mp3');
         this.quoteSound = new Audio('day.wav');
